@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+}
+
+#container-start {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+}
+
+#container-start h2 {
+	margin-left: 10px;
+	margin-top: 10px;
+	color: #333;
+	font-weight: 500;
+	font-family: 'poppins';
+}
+
+#container-start p {
+	font-family: 'Montserrat';
+	text-align: left;
+	color: black;
+	font-size: 18px;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+.extention {
+	margin-left: 60px;
+}
+
+.extention a {
+	margin-left: 75px;
+	font-weight: 900;
+	color: #333;
+	font-size: 25px;
+	display: inline-block;
+	text-decoration: none;
+	margin-right: 30px;
+	font-family: 'poppins';
+}
+
+.extention h1 {
+	font-family: 'poppins';
+	color: #333;
+	margin-left: 60px;
+	margin-top: 10px;
+	font-size: 29px;
+	font-weight: 400;
+}
+
+.extention img {
+	width: 200px;
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+a:hover {
+	color: #0099ff;
+}
+
+.form-container-start {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.info-container-start {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.overlay {
+	background: #0088ff;
+	background: -webkit-linear-gradient(to right, #0088ff, #9cc3ff);
+	background: linear-gradient(to right, #0088ff, #9cc3ff);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.info-panel {
+	font-family: 'poppins';
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+	right: 0;
+	transform: translateX(0);
+}
+
+.overlay a {
+	color: #FFFFFF;
+	display: inline-block;
+	font-size: 18px;
+}

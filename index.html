@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>e-School</title>
+    <link rel="stylesheet" type="text/css" href="./styles/login.css">
+    <link rel="stylesheet" type="text/css" href="./styles/register.css">
+    <link rel="stylesheet" type="text/css" href="./styles/home.css">
+    <link rel="stylesheet" type="text/css" href="./styles/studentHome.css">
+    <link rel="stylesheet" type="text/css" href="./styles/teacherHome.css">
+
+    <link rel="shortcut icon"
+        href="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/2b/4f/79/2b4f79b4-5a16-71e7-8395-5fb78811e6ef/AppIcon-1x_U007emarketing-85-220-4.png/1024x1024bb.png" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+</body>
+
+<!-- Login forms -->
+
+<script type="text/x-handlebars-template" id="login-form-student">
+    <img class="wave" src="images/wave.svg">
+    <div class="login-register-container">
+        <div class="img">
+            <img src="images/exam.svg">
+        </div>
+        <div class="login-content">
+            <form id="login-form" onsubmit="loginStudentSubmit(event)">
+                <img src="images/hat.svg">
+                <h2 class="title">Welcome</h2>
+                   <div class="input-div">
+                      <div class="i">
+                              <i class="fas fa-user"></i>
+                      </div>
+                      <div class="div">
+                              <input type="text" class="input" placeholder="Email" name="email">
+                      </div>
+                   </div>
+                   <div class="input-div pass">
+                      <div class="i"> 
+                           <i class="fas fa-lock"></i>
+                      </div>
+                      <div class="div">
+                           <input type="password" class="input" placeholder="Password" name="password">
+                   </div>
+                </div>
+                <p>Don't have an account?- <a href="/registerStudent" onclick="navigateHandler(event)">Create one!</a></p>
+                <input type="submit" class="btn" value="LOGIN">
+            </form>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="login-form-teacher">
+    <img class="wave" src="images/wave.svg">
+    <div class="login-register-container">
+        <div class="img">
+            <img src="images/teacherLogo.svg">
+        </div>
+        <div class="login-content">
+            <form id="login-form" onsubmit="loginTeacherSubmit(event)">
+                <img src="images/hat.svg">
+                <h2 class="title">Welcome</h2>
+                   <div class="input-div one">
+                      <div class="i">
+                              <i class="fas fa-user"></i>
+                      </div>
+                      <div class="div">
+                              <input type="text" class="input" placeholder="Email" name="email">
+                      </div>
+                   </div>
+                   <div class="input-div pass">
+                      <div class="i"> 
+                           <i class="fas fa-lock"></i>
+                      </div>
+                      <div class="div">
+                           <input type="password" class="input" placeholder="Password" name="password">
+                   </div>
+                </div>
+                <p>Don't have an account?- <a href="/registerTeacher" onclick="navigateHandler(event)">Create one!</a></p>
+                <input type="submit" class="btn" value="LOGIN">
+            </form>
+        </div>
+    </div>
+</script>
+
+<!-- Register forms -->
+
+<script type="text/x-handlebars-template" id="register-form-student">
+    <img class="wave" src="images/wave.svg">
+    <div class="login-register-container">
+        <div class="img">
+            <img src="images/exam.svg">
+        </div>
+        <div class="register-content">
+            <form id="register-form" class="register-form" onsubmit="registerStudentSubmit(event)">
+                <img src="images/hat.svg">
+                <h2 class="title">REGISTER</h2>
+                   <div class="input-div1 one">
+                      <div class="i">
+                              <i class="fas fa-user"></i>
+                      </div>
+                      <div class="div1">
+                              <input type="text" class="input1" placeholder="Email" name="email">
+                      </div>
+                   </div>
+                   <div class="input-div1 pass">
+                      <div class="i"> 
+                           <i class="fas fa-lock"></i>
+                      </div>
+                      <div class="div1">
+                           <input type="password" class="input1" placeholder="Password" name="password">
+                   </div>
+                </div>
+                <div class="input-div1 pass">
+                    <div class="i"> 
+                         <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div1">
+                         <input type="password" class="input1" placeholder="Repeat Password" name="repeatPassword">
+                 </div>
+              </div>
+              <div class="input-div1 pass">
+                <div class="i"> 
+                     <i class="fas fa-users"></i>
+                </div>
+                <div class="div1">
+                     <input type="text" class="input1" placeholder="Student Name" name="studentName">
+                </div>
+              </div>
+              <div class="input-div1 pass">
+                <div class="i"> 
+                     <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="div1" id="grade-options">
+                     <select name="grade" id="options">
+                         <option selected disabled>CHOOSE GRADE</option>
+                         <option value="5">5</option>
+                         <option value="6">6</option>
+                         <option value="7">7</option>
+                         <option value="8">8</option>
+                         <option value="8А">8А</option>
+                         <option value="8Б">8Б</option>
+                         <option value="8В">8В</option>
+                         <option value="8Г">8Г</option>
+                         <option value="8Д">8Д</option>
+                         <option value="8Е">8Е</option>
+                         <option value="9А">9А</option>
+                         <option value="9Б">9Б</option>
+                         <option value="9В">9В</option>
+                         <option value="9Г">9Г</option>
+                         <option value="9Д">9Д</option>
+                         <option value="9Е">9Е</option>
+                         <option value="10А">10А</option>
+                         <option value="10Б">10Б</option>
+                         <option value="10В">10В</option>
+                         <option value="10Г">10Г</option>
+                         <option value="10Д">10Д</option>
+                         <option value="10Е">10Е</option>
+                         <option value="11А">11А</option>
+                         <option value="11Б">11Б</option>
+                         <option value="11В">11В</option>
+                         <option value="11Г">11Г</option>
+                         <option value="11Д">11Д</option>
+                         <option value="11Е">11Е</option>
+                         <option value="12А">12А</option>
+                         <option value="12Б">12Б</option>
+                         <option value="12В">12В</option>
+                         <option value="12Г">12Г</option>
+                         <option value="12Д">12Д</option>
+                         <option value="12Е">12Е</option>
+                     </select>
+                </div>
+              </div>
+                 <input type="submit" class="btn" value="REGISTER">
+                <a href="/registerStudent" onclick="navigateHandler(event)"></a>
+            </form>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="register-form-teacher">
+    <img class="wave" src="images/wave.svg">
+    <div class="login-register-container">
+        <div class="img">
+            <img src="images/exam.svg">
+        </div>
+        <div class="register-content">
+            <form id="register-form" class="register-form" onsubmit="registerTeacherSubmit(event)">
+                <img src="images/hat.svg">
+                <h2 class="title">REGISTER</h2>
+                   <div class="input-div1 one">
+                      <div class="i">
+                              <i class="fas fa-user"></i>
+                      </div>
+                      <div class="div1">
+                              <input type="text" class="input1" placeholder="Email" name="email">
+                      </div>
+                   </div>
+                   <div class="input-div1 pass">
+                      <div class="i"> 
+                           <i class="fas fa-lock"></i>
+                      </div>
+                      <div class="div1">
+                           <input type="password" class="input1" placeholder="Password" name="password">
+                   </div>
+                   </div>
+                   <div class="input-div1 pass">
+                    <div class="i"> 
+                         <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div1">
+                         <input type="password" class="input1" placeholder="Repeat Password" name="repeatPassword">
+                 </div>
+                   </div>
+                   <div class="input-div1 pass">
+                   <div class="i"> 
+                    <i class="fas fa-chalkboard-teacher"></i>          
+                    </div>
+                <div class="div1">
+                     <input type="text" class="input1" placeholder="Teacher Name" name="teacherName">
+                </div>
+                   </div>
+                   <div class="input-div1 pass">
+                <div class="i"> 
+                     <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="div1" id="grade-options">
+                     <select name="grade" id="options">
+                         <option selected disabled>CHOOSE SUBJECT</option>
+                         <option value="Math">Math</option>
+                         <option value="German">German</option>
+                         <option value="English">English</option>
+                         <option value="IT">IT</option>
+                         <option value="Bulgarian">Bulgarian</option>
+                         <option value="Physic">Physic</option>
+                         <option value="Geography">Geography</option>
+                         <option value="History">History</option>
+                         <option value="PE">PE</option>
+                         <option value="Russian">Russian</option>
+                     </select>
+                </div>
+                   </div>
+                <input type="submit" class="btn" value="REGISTER">
+                <a href="/registerTeacher" onclick="navigateHandler(event)"></a>
+            </form>
+        </div>
+    </div>
+</script>
+
+<!-- Start form -->
+
+<script type="text/x-handlebars-template" id="option-form">
+    <div id="container-start" >
+        <div class="form-container-start">
+            <div class="extention">
+                <h1>Welcome!</h1>
+                <h2>You want to login as:</h2>
+                <a href="/loginStudent" onclick="navigateHandler(event)">Student</a>
+                <img src="./images/student.svg" alt="">
+                <a href="/loginTeacher" onclick="navigateHandler(event)">Teacher</a>
+                <img src="./images/teacher.svg" alt="">
+            </div>
+        </div>
+        <div class="info-container-start">
+            <div class="overlay">
+                <div class="info-panel">
+                    <h1>Hello, Dear!</h1>
+                    <p>Before joining our crew, here we can give you some useful information!</p>
+                    <h3>Who we are? / What we do?</h3>
+                    <p>We are one of the best high-schools in our area and our skillful developers made this platform
+                        for our students, because we think about their comfort during and after they leave our high-school.
+                    </p>
+                    <span>Want to learn more about us? <a href="https://www.pmg-blg.com/">Click here!</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+<!-- Homepages -->
+
+<script type="text/x-handlebars-template" id="student-home-form">
+    <nav id="student-home">
+        <h1 class="logo">e-SCHOOL</h1>
+        <ul id="navigation-student">
+          <li><a href="/logout" onclick="navigateHandler(event)">LOG OUT</a></li>
+          <li><a href="#">WELLCOME, {{ name }}</a></li>
+        </ul>
+    </nav>
+
+    <div class="grade-information">
+        <h1>Here you can check out your grades and track your scores whenever you want</h1>
+          
+          {{#each data}}
+          <div class="column">
+            <div class="card">
+              <h3>{{@key}}</h3>
+              <p>YOUR GRADES</p>
+              {{#if this}}
+              <p>{{this}}</p>
+              {{else}}
+              <p>You don't have any grades!</p>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="teacher-home-form">
+    <nav id="student-home">
+        <h1 class="logo">e-SCHOOL</h1>
+        <ul id="navigation-student">
+          <li><a href="/logout" onclick="navigateHandler(event)">LOG OUT</a></li>
+          <li><a href="#">WELLCOME, {{ name }}</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <form id="search" class="filterStudents" onsubmit="searchClass(event)">
+            <img src="./images/teacherHome.svg" alt="">
+            <h1>Before you estimate a student:</h1>
+            <h3>Please select a class</h3>
+            <select name="classes" id="filterClass">
+                <option selected disabled>Please select a class</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="8А">8А</option>
+                <option value="8Б">8Б</option>
+                <option value="8В">8В</option>
+                <option value="8Г">8Г</option>
+                <option value="8Д">8Д</option>
+                <option value="8Е">8Е</option>
+                <option value="9А">9А</option>
+                <option value="9Б">9Б</option>
+                <option value="9В">9В</option>
+                <option value="9Г">9Г</option>
+                <option value="9Д">9Д</option>
+                <option value="9Е">9Е</option>
+                <option value="10А">10А</option>
+                <option value="10Б">10Б</option>
+                <option value="10В">10В</option>
+                <option value="10Г">10Г</option>
+                <option value="10Д">10Д</option>
+                <option value="10Е">10Е</option>
+                <option value="11А">11А</option>
+                <option value="11Б">11Б</option>
+                <option value="11В">11В</option>
+                <option value="11Г">11Г</option>
+                <option value="11Д">11Д</option>
+                <option value="11Е">11Е</option>
+                <option value="12А">12А</option>
+                <option value="12Б">12Б</option>
+                <option value="12В">12В</option>
+                <option value="12Г">12Г</option>
+                <option value="12Д">12Д</option>
+                <option value="12Е">12Е</option>
+            </select>
+            <input type="submit" class="btn" value="Submit">
+           
+        </form>
+    </div>
+
+    <div class="aside-info">
+        <img src="./images/rule.svg" alt="">
+        <h1>Education is our passport to the future, tomorrow belongs to the 
+            people who prepare for it today.</h1>
+            <span>- MALCOLM X</span>
+        <p>Our team wants to thank you for choosing one of the hardest most 
+            challenging professions!
+        </p>
+    </div>
+
+</script>
+
+<script type="text/x-handlebars-template" id="search-student-home">
+    <nav id="student-home">
+        <h1 class="logo">e-SCHOOL</h1>
+        <ul id="navigation-student">
+          <li><a href="/logout" onclick="navigateHandler(event)">LOG OUT</a></li>
+          <li><a href="#">WELLCOME, {{ name }}</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <form action="" id="search" class="selectNote" onsubmit="searchStudent(event)">
+            <img src="./images/selectStudent.svg" alt="">
+            <h1>The last step is to select the corresponding:</h1>
+
+              <h3>Student:</h3>
+              <select name="names" id="selectedStudent">
+                <option>CLICK HERE...</option>
+                {{#each names}}
+                <option id="{{this.id}}">{{this.name}}</option>
+                {{else}}
+                <p>Sorry there are no students yes!</p>
+                {{/each}}
+              </select>
+            
+
+                <h3>Note:</h3>
+                <select name="names" id="selectedNote">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+               </select>
+            <input type="submit" class="btn" value="Submit" onclick="submitNote(event)">
+        </form>
+    </div>
+
+    <div class="aside-info">
+      <img src="./images/rule.svg" alt="">
+      <h1>Education is our passport to the future, for tomorrow belongs to the 
+          people who prepare for it today.</h1>
+          <span>- MALCOLM X</span>
+      <p>Our team wants to thank you for choosing one of the most hardest and 
+          challenging professions!
+      </p>
+  </div>
+
+</script>
+
+<script src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyDYVhAy3LY_3JP2KpQdbl8mPHnn4pfNgvE",
+        authDomain: "shkolo-1ef2c.firebaseapp.com",
+        projectId: "shkolo-1ef2c",
+        storageBucket: "shkolo-1ef2c.appspot.com",
+        messagingSenderId: "937080838548",
+        appId: "1:937080838548:web:b1c12cd4dfacac27c3d781"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="./js/services.js"></script>
+<script src="./js/router.js"></script>
+<script src="./js/init.js"></script>
+
+</html>

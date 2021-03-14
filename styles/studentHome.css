@@ -1,0 +1,55 @@
+#student-home {
+    margin-top: -90px;
+    height: 80px;
+    width: 1400px;
+    font-family: 'poppins';
+    background-color: #0088ff;
+    color: #fff;
+}
+
+#student-home a {
+    color: #fff;
+    float: right;
+    margin-top: -30px;
+    margin-right: 40px;
+    font-size: 24px;
+}
+
+#student-home h1 {
+    font-family: 'poppins';
+    margin-left: 80px;
+    padding-top: 25px;
+}
+
+#student-home a:hover {
+    text-shadow: 1px 2px 2px rgb(71, 71, 71);
+}
+
+.grade-information {
+    margin-top: 10px;
+}
+
+.grade-information h1 {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 30px 10px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 18px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.card p {
+    text-align: center;
+    font-family: 'poppins';
+    color: black;
+    font-size: 16px;
+}
